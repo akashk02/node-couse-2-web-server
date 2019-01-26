@@ -1,8 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
-
 const fs= require('fs');
 
+const port = process.env.PORT || 3000;
 let app = express();
 
 
@@ -12,6 +12,7 @@ app.set('view engine','hbs')
 // app.use((req, res, next)=>{
 //     res.render('maintaince.hbs')
 // });
+//
 
 app.use( (req, res, next)=>{
     let log = new Date().toString();
@@ -60,6 +61,6 @@ app.get('/abc',(req,res)=>{
     res.send('abcd')
 } )
 
-app.listen(3000, ()=>{
-    console.log('server is up');
+app.listen(port, ()=>{
+    console.log(`server is up on port ${port}`);
 } );
