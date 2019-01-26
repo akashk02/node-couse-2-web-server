@@ -38,6 +38,14 @@ hbs.registerHelper('capsOn',(text)=>{
 return text.toUpperCase();
 });
 
+app.get('/projects', (req,res)=>{
+    res.render('projects.hbs', {
+        pageTitle :'projects',
+        paragraph :'this is protfolio page'
+
+    })
+} );
+
 app.get('/', (req,res)=>{
     res.render('welcome.hbs' , {
         pageTitle:'this is dynamic rendering welcome page',
